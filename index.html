@@ -148,6 +148,137 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-rhtext004" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/30/rhtext004/">vue项目关于列表的特殊使用</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/30/rhtext004/" class="archive-article-date">
+  	<time datetime="2019-06-30T15:39:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面:"></a><em>写在前面:</em></h6><blockquote>
+<p>在使用 vue+element-ui 开发项目，列表除了展示数据，有时候为了满足更好的体验，也要做一些处理。<br><a href="https://ronghuaizone.github.io/vue-element_test/test3.html" target="_blank" rel="noopener">示例1</a><br><a href="https://ronghuaizone.github.io/vue-element_test/test2.html" target="_blank" rel="noopener">示例2</a></p>
+</blockquote>
+<h4 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h4><p><a href="#1">1. 列表的选择性禁用</a><br><a href="#2">2. 跨页选中数据</a><br><a href="#2">3. 无分页列表，支持搜索，记住勾选的数据</a></p>
+<hr>
+<p><a name="1">1.列表的选择性禁用</a></p>
+<ul>
+<li><p>需求</p>
+<blockquote>
+<p>有时候列表增加勾选按钮的时候，有时候不满足条件的项，不让勾选，这个时候就要将这些项的勾选禁用掉。如图<br><img src="/2019/06/30/rhtext004/1.png" alt="示例"></p>
+</blockquote>
+</li>
+<li><p>1.1实现方法</p>
+<blockquote>
+<p>element-ui 列表的勾选项type=’selection’中,有一个selectable的属性，返回true就是可以勾选，返回false，则禁止勾选。<br><img src="/2019/06/30/rhtext004/2.png" alt="selectable"><br><a href="https://ronghuaizone.github.io/vue-element_test/test3.html" target="_blank" rel="noopener">完成后的示例</a></p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<p><a name="2">2.跨页选中数据</a></p>
+<ul>
+<li><p>需求</p>
+<blockquote>
+<p>在一个列表，要显示索引，索引随分页切换后根据分支值渐进增大，并且可以跨页选中一组数据。如图<br><img src="/2019/06/30/rhtext004/3.png" alt="示例"></p>
+</blockquote>
+</li>
+<li><p>2.1 思路</p>
+<blockquote>
+<p>第一步处理顺序号，让序号根据分页的参数和自身索引值去计算。第二部，增加跨页选中。</p>
+</blockquote>
+</li>
+<li><p>2.2 第一步：处理顺序号</p>
+<blockquote>
+<p>数据是分页的，所以对接接口时，回向后台传一个{pageNo:1,pageSize:10}，然后获取到十条数据，现在示例，所以前端直接将数据列表切割成十个一组的二维数组，模拟真实开发数据。首先处理顺序号。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;(sendForm.pageNo-1)*10+scope.$index+1&#125;&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>2.3 增加跨页选中</p>
+<blockquote>
+<p>如果列表的勾选项type=’selection’，在分页切换的时候会将你选择的列表的数据清空。要想实现跨页勾选，则需要一点小技巧，在列表的外层增加，一个el-checkbox-group，列表勾选的项用el-checkbox，这个时候相当于，用一个大的chekbox盒子将列表包裹。这样就能实现跨页勾选。<br><img src="/2019/06/30/rhtext004/4.png" alt="切换删除校验"></p>
+</blockquote>
+</li>
+</ul>
+<p><a href="https://ronghuaizone.github.io/vue-element_test/test3.html" target="_blank" rel="noopener">完成后的示例</a></p>
+<hr>
+<p><a name="3">3.无分页列表，支持搜索，记住勾选的数据</a></p>
+<ul>
+<li><p>需求</p>
+<blockquote>
+<p>一个无分页列表，有搜索。不管是否搜索都要记住勾选的数据。如图所示。<br><img src="/2019/06/30/rhtext004/5.png" alt="selectable"></p>
+</blockquote>
+</li>
+<li><p>3.1 实现方法</p>
+<blockquote>
+<p>这个也可以用上面的方法，下面的示例用的另外一种方法，现贴出示例。<br><a href="https://ronghuaizone.github.io/vue-element_test/test2.html" target="_blank" rel="noopener">示例</a></p>
+</blockquote>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vue+element</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/30/rhtext004/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-rhtext003" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

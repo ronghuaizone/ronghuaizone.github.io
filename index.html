@@ -155,7 +155,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/30/rhtext004/">vue项目关于列表的特殊使用</a>
+      <a class="article-title" href="/2019/06/30/rhtext004/">vue项目关于列表的特殊交互及使用</a>
     </h1>
   
 
@@ -169,43 +169,73 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h6 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面:"></a><em>写在前面:</em></h6><blockquote>
-<p>在使用 vue+element-ui 开发项目，列表除了展示数据，有时候为了满足更好的体验，也要做一些处理。<br><a href="https://ronghuaizone.github.io/vue-element_test/test3.html" target="_blank" rel="noopener">示例1</a><br><a href="https://ronghuaizone.github.io/vue-element_test/test2.html" target="_blank" rel="noopener">示例2</a></p>
+<p>在使用 vue+element-ui 开发项目，列表除了展示数据，有时候为了满足更好的体验，也要一些特殊交互和使用，需要特殊处理。<br><a href="https://ronghuaizone.github.io/vue-element_test/test4.html" target="_blank" rel="noopener">示例1</a><br><a href="https://ronghuaizone.github.io/vue-element_test/test3.html" target="_blank" rel="noopener">示例2</a><br><a href="https://ronghuaizone.github.io/vue-element_test/test2.html" target="_blank" rel="noopener">示例3</a></p>
 </blockquote>
-<h4 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h4><p><a href="#1">1. 列表的选择性禁用</a><br><a href="#2">2. 跨页选中数据</a><br><a href="#2">3. 无分页列表，支持搜索，记住勾选的数据</a></p>
+<h4 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h4><p><a href="#1">1. 列表处理的前端增删、批量删除以及提交合并数组的处理</a><br><a href="#2">2. 列表的选择性禁用</a><br><a href="#3">3. 跨页选中数据</a><br><a href="#4">4. 无分页列表，支持搜索，记住勾选的数据</a></p>
 <hr>
-<p><a name="1">1.列表的选择性禁用</a></p>
+<p><a name="1">1.列表处理的前端增删、批量删除以及提交合并数组的处理</a></p>
+<ul>
+<li><p>需求</p>
+<blockquote>
+<p>有一个需求，需要对一个列表的数据进行操作，只有在提交才调用接口，列表刚进来也调用接口，会有一些数据。并且在提交时如果两个对象姓名和地址一样。则合并这两个对象，让数字项相加。<br><img src="/2019/06/30/rhtext004/001.png" alt="示例"></p>
+</blockquote>
+</li>
+<li><p>1.1思路</p>
+<blockquote>
+<p>新增和删除比较好实现，新增时，直接push一个空对象到一个新的数组里面，删除则是根据索引splice删除当前项，比较难的就是批量删除，批量删除要根据对象中唯一的字段去匹配，然后从最初的列表里面删除，后端返回的数据有唯一的标识id,但是前端新建的数据没有唯一的标识id,所以新增的时候给新增的每一项加一个时间key,这个key也是唯一的。提交的时候合并对象，则是要将判断的两个数据变成一个新的数据的某一项，然后根据这一项判断。</p>
+</blockquote>
+</li>
+<li><p>1.2 第一步：完成新增和删除功能</p>
+<blockquote>
+<p><img src="/2019/06/30/rhtext004/002.png" alt="新增/删除"></p>
+</blockquote>
+</li>
+<li><p>1.3 第二步：完成批量删除功能</p>
+<blockquote>
+<p>后端返回的数据必有id前端新建的数据必有key，所以批量删除时，选中数据后，必须将选中的数据如multipleSelection和所有的数据如ruleForm.list进行比对，然后将ruleForm.list中和multipleSelection中id或者key相同的项去掉，就实现了批量删除功能。<br><img src="/2019/06/30/rhtext004/003.png" alt="批量删除"></p>
+</blockquote>
+</li>
+<li><p>1.4 第三步：提交合并相同对象</p>
+<blockquote>
+<p>提交的时候，两个对象姓名和地址一样。则合并这两个对象，让数字项相加，这个时候要将姓名和地址变成一个字段，去进行比较。<br><img src="/2019/06/30/rhtext004/004.png" alt="合并相同对象"></p>
+</blockquote>
+</li>
+</ul>
+<p><a href="https://ronghuaizone.github.io/vue-element_test/test4.html" target="_blank" rel="noopener">完成后的示例</a></p>
+<hr>
+<p><a name="2">2. 列表的选择性禁用</a></p>
 <ul>
 <li><p>需求</p>
 <blockquote>
 <p>有时候列表增加勾选按钮的时候，有时候不满足条件的项，不让勾选，这个时候就要将这些项的勾选禁用掉。如图<br><img src="/2019/06/30/rhtext004/1.png" alt="示例"></p>
 </blockquote>
 </li>
-<li><p>1.1实现方法</p>
+<li><p>2.1实现方法</p>
 <blockquote>
 <p>element-ui 列表的勾选项type=’selection’中,有一个selectable的属性，返回true就是可以勾选，返回false，则禁止勾选。<br><img src="/2019/06/30/rhtext004/2.png" alt="selectable"><br><a href="https://ronghuaizone.github.io/vue-element_test/test3.html" target="_blank" rel="noopener">完成后的示例</a></p>
 </blockquote>
 </li>
 </ul>
 <hr>
-<p><a name="2">2.跨页选中数据</a></p>
+<p><a name="3">3. 跨页选中数据</a></p>
 <ul>
 <li><p>需求</p>
 <blockquote>
 <p>在一个列表，要显示索引，索引随分页切换后根据分支值渐进增大，并且可以跨页选中一组数据。如图<br><img src="/2019/06/30/rhtext004/3.png" alt="示例"></p>
 </blockquote>
 </li>
-<li><p>2.1 思路</p>
+<li><p>3.1 思路</p>
 <blockquote>
 <p>第一步处理顺序号，让序号根据分页的参数和自身索引值去计算。第二部，增加跨页选中。</p>
 </blockquote>
 </li>
-<li><p>2.2 第一步：处理顺序号</p>
+<li><p>3.2 第一步：处理顺序号</p>
 <blockquote>
 <p>数据是分页的，所以对接接口时，回向后台传一个{pageNo:1,pageSize:10}，然后获取到十条数据，现在示例，所以前端直接将数据列表切割成十个一组的二维数组，模拟真实开发数据。首先处理顺序号。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;(sendForm.pageNo-1)*10+scope.$index+1&#125;&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
-<li><p>2.3 增加跨页选中</p>
+<li><p>3.3 增加跨页选中</p>
 <blockquote>
 <p>如果列表的勾选项type=’selection’，在分页切换的时候会将你选择的列表的数据清空。要想实现跨页勾选，则需要一点小技巧，在列表的外层增加，一个el-checkbox-group，列表勾选的项用el-checkbox，这个时候相当于，用一个大的chekbox盒子将列表包裹。这样就能实现跨页勾选。<br><img src="/2019/06/30/rhtext004/4.png" alt="切换删除校验"></p>
 </blockquote>
@@ -213,16 +243,16 @@
 </ul>
 <p><a href="https://ronghuaizone.github.io/vue-element_test/test3.html" target="_blank" rel="noopener">完成后的示例</a></p>
 <hr>
-<p><a name="3">3.无分页列表，支持搜索，记住勾选的数据</a></p>
+<p><a name="4">4. 无分页列表，支持搜索，记住勾选的数据</a></p>
 <ul>
 <li><p>需求</p>
 <blockquote>
 <p>一个无分页列表，有搜索。不管是否搜索都要记住勾选的数据。如图所示。<br><img src="/2019/06/30/rhtext004/5.png" alt="selectable"></p>
 </blockquote>
 </li>
-<li><p>3.1 实现方法</p>
+<li><p>4.1 实现方法</p>
 <blockquote>
-<p>这个也可以用上面的方法，下面的示例用的另外一种方法，现贴出示例。<br><a href="https://ronghuaizone.github.io/vue-element_test/test2.html" target="_blank" rel="noopener">示例</a></p>
+<p>这个也可以用上面的方法，但是上面的批量操作按钮比较难嵌入。下面的示例用的另外一种方法，可以实现批量操作，现贴出示例。<br><a href="https://ronghuaizone.github.io/vue-element_test/test2.html" target="_blank" rel="noopener">示例</a></p>
 </blockquote>
 </li>
 </ul>

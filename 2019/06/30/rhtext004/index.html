@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue项目关于列表的特殊交互及使用 | developer rong huai</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写在前面: 在使用 vue+element-ui 开发项目，列表除了展示数据，有时候为了满足更好的体验，也要一些特殊交互和使用，需要特殊处理。示例1示例2示例3  目录：1. 列表处理的前端增删、批量删除以及提交合并数组的处理2. 列表的选择性禁用3. 跨页选中数据4. 无分页列表，支持搜索，记住勾选的数据  1.列表处理的前端增删、批量删除以及提交合并数组的处理  需求  有一个需求，需要对一个">
+  <meta name="description" content="写在前面: 在使用 vue+element-ui 开发项目，列表除了展示数据，有时候为了满足更好的体验，也要一些特殊交互和使用，需要特殊处理。示例1示例2示例3  目录：1. 列表处理的前端增删、批量删除以及提交合并数组的处理2. 列表的选择性禁用3. 跨页选中数据4. 无分页列表，支持搜索，记住勾选的数据  1. 列表处理的前端增删、批量删除以及提交合并数组的处理  需求  有一个需求，需要对一">
 <meta name="keywords" content="vue+element">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue项目关于列表的特殊交互及使用">
 <meta property="og:url" content="http://yoursite.com/2019/06/30/rhtext004/index.html">
 <meta property="og:site_name" content="developer rong huai">
-<meta property="og:description" content="写在前面: 在使用 vue+element-ui 开发项目，列表除了展示数据，有时候为了满足更好的体验，也要一些特殊交互和使用，需要特殊处理。示例1示例2示例3  目录：1. 列表处理的前端增删、批量删除以及提交合并数组的处理2. 列表的选择性禁用3. 跨页选中数据4. 无分页列表，支持搜索，记住勾选的数据  1.列表处理的前端增删、批量删除以及提交合并数组的处理  需求  有一个需求，需要对一个">
+<meta property="og:description" content="写在前面: 在使用 vue+element-ui 开发项目，列表除了展示数据，有时候为了满足更好的体验，也要一些特殊交互和使用，需要特殊处理。示例1示例2示例3  目录：1. 列表处理的前端增删、批量删除以及提交合并数组的处理2. 列表的选择性禁用3. 跨页选中数据4. 无分页列表，支持搜索，记住勾选的数据  1. 列表处理的前端增删、批量删除以及提交合并数组的处理  需求  有一个需求，需要对一">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext004/001.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext004/002.png">
@@ -25,10 +25,10 @@
 <meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext004/3.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext004/4.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext004/5.png">
-<meta property="og:updated_time" content="2019-07-02T15:44:09.248Z">
+<meta property="og:updated_time" content="2019-07-02T16:36:16.524Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue项目关于列表的特殊交互及使用">
-<meta name="twitter:description" content="写在前面: 在使用 vue+element-ui 开发项目，列表除了展示数据，有时候为了满足更好的体验，也要一些特殊交互和使用，需要特殊处理。示例1示例2示例3  目录：1. 列表处理的前端增删、批量删除以及提交合并数组的处理2. 列表的选择性禁用3. 跨页选中数据4. 无分页列表，支持搜索，记住勾选的数据  1.列表处理的前端增删、批量删除以及提交合并数组的处理  需求  有一个需求，需要对一个">
+<meta name="twitter:description" content="写在前面: 在使用 vue+element-ui 开发项目，列表除了展示数据，有时候为了满足更好的体验，也要一些特殊交互和使用，需要特殊处理。示例1示例2示例3  目录：1. 列表处理的前端增删、批量删除以及提交合并数组的处理2. 列表的选择性禁用3. 跨页选中数据4. 无分页列表，支持搜索，记住勾选的数据  1. 列表处理的前端增删、批量删除以及提交合并数组的处理  需求  有一个需求，需要对一">
 <meta name="twitter:image" content="http://yoursite.com/2019/06/30/rhtext004/001.png">
   
     <link rel="alternative" href="/atom.xml" title="developer rong huai" type="application/atom+xml">
@@ -186,14 +186,14 @@
 </blockquote>
 <h4 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h4><p><a href="#1">1. 列表处理的前端增删、批量删除以及提交合并数组的处理</a><br><a href="#2">2. 列表的选择性禁用</a><br><a href="#3">3. 跨页选中数据</a><br><a href="#4">4. 无分页列表，支持搜索，记住勾选的数据</a></p>
 <hr>
-<p><a name="1">1.列表处理的前端增删、批量删除以及提交合并数组的处理</a></p>
+<p><a name="1">1. 列表处理的前端增删、批量删除以及提交合并数组的处理</a></p>
 <ul>
 <li><p>需求</p>
 <blockquote>
 <p>有一个需求，需要对一个列表的数据进行操作，只有在提交才调用接口，列表刚进来也调用接口，会有一些数据。并且在提交时如果两个对象姓名和地址一样。则合并这两个对象，让数字项相加。<br><img src="/2019/06/30/rhtext004/001.png" alt="示例"></p>
 </blockquote>
 </li>
-<li><p>1.1思路</p>
+<li><p>1.1 思路</p>
 <blockquote>
 <p>新增和删除比较好实现，新增时，直接push一个空对象到一个新的数组里面，删除则是根据索引splice删除当前项，比较难的就是批量删除，批量删除要根据对象中唯一的字段去匹配，然后从最初的列表里面删除，后端返回的数据有唯一的标识id,但是前端新建的数据没有唯一的标识id,所以新增的时候给新增的每一项加一个时间key,这个key也是唯一的。提交的时候合并对象，则是要将判断的两个数据变成一个新的数据的某一项，然后根据这一项判断。</p>
 </blockquote>
@@ -223,7 +223,7 @@
 <p>有时候列表增加勾选按钮的时候，有时候不满足条件的项，不让勾选，这个时候就要将这些项的勾选禁用掉。如图<br><img src="/2019/06/30/rhtext004/1.png" alt="示例"></p>
 </blockquote>
 </li>
-<li><p>2.1实现方法</p>
+<li><p>2.1 实现方法</p>
 <blockquote>
 <p>element-ui 列表的勾选项type=’selection’中,有一个selectable的属性，返回true就是可以勾选，返回false，则禁止勾选。<br><img src="/2019/06/30/rhtext004/2.png" alt="selectable"><br><a href="https://ronghuaizone.github.io/vue-element_test/test3.html" target="_blank" rel="noopener">完成后的示例</a></p>
 </blockquote>
@@ -326,6 +326,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/07/02/rhtext005/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          vue项目关于tree特殊处理
+        
+      </div>
+    </a>
   
   
     <a href="/2019/06/30/rhtext003/" id="article-nav-older" class="article-nav-link-wrap">

@@ -148,6 +148,118 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-rhtext005" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/02/rhtext005/">vue项目关于tree特殊处理</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/02/rhtext005/" class="archive-article-date">
+  	<time datetime="2019-07-02T15:50:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面:"></a><em>写在前面:</em></h6><blockquote>
+<p>在使用 vue+element-ui 开发的项目，肯定有树级关系的交互，但是有时候在做一些处理时，后端没有提供前端需要的数据，这个时候前端则需要对树级的数据进行特殊的处理。<br><a href="https://ronghuaizone.github.io/vue-element_test/test5.html" target="_blank" rel="noopener">示例1</a><br><a href="https://ronghuaizone.github.io/vue-element_test/test6.html" target="_blank" rel="noopener">示例2</a></p>
+</blockquote>
+<h4 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h4><p><a href="#1">1. 树级结构的数据，点击向上获取所有父级id</a><br><a href="#2">2. 树级结构的数据,搜索对应id,返回所对对象</a>  </p>
+<hr>
+<p><a name="1">1. 树级结构的数据，点击向上获取所有父级id</a></p>
+<ul>
+<li><p>需求</p>
+<blockquote>
+<p>在一个列表中，新建的时候要给数据绑定组织或者菜单，编辑的时候可以查看到这个组织和菜单，编辑时可以采用级联选择器，但是编辑时要想回填出数据，则必须向上获得所有的父级id,才可以回填出组织或者菜单。如果后台返回的数据没有一级一级存父级id，或者没有用一个数组ids存所有父级id，这个时候就需要前端在获取数据的时候进行处理。现用点击树结构的项，获取当前id及所有父id,来模拟回填的场景。<br><img src="/2019/07/02/rhtext005/1.png" alt="示例"></p>
+</blockquote>
+</li>
+<li><p>1.1 方法一：获取数据后一层一层将父级id存着，然后在点击的时候获取当前id及所有父级id。</p>
+<blockquote>
+<p><img src="/2019/07/02/rhtext005/2.png" alt="方法一"></p>
+</blockquote>
+</li>
+<li><p>1.2 方法二：获取数据后直接将父级id,和当前id存在一个新的idlist字段里。</p>
+<blockquote>
+<p><img src="/2019/07/02/rhtext005/3.png" alt="方法二"></p>
+</blockquote>
+</li>
+</ul>
+<p><a href="https://ronghuaizone.github.io/vue-element_test/test5.html" target="_blank" rel="noopener">完成后的示例</a></p>
+<hr>
+<p><a name="2">2. 树级结构的数据,搜索对应id,返回所对对象</a></p>
+<ul>
+<li><p>需求</p>
+<blockquote>
+<p>一个树结构数据，根据id返回id对应的对象。<br><img src="/2019/07/02/rhtext005/4.png" alt="示例"></p>
+</blockquote>
+</li>
+<li><p>2.1 根据id搜索，只能递归查找，匹配到id对应项，然后返回对应对象</p>
+<blockquote>
+<p><img src="/2019/07/02/rhtext005/5.png" alt="递归"></p>
+</blockquote>
+</li>
+</ul>
+<p><a href="https://ronghuaizone.github.io/vue-element_test/test6.html" target="_blank" rel="noopener">完成后的示例</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vue+element</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/02/rhtext005/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-rhtext004" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -173,14 +285,14 @@
 </blockquote>
 <h4 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h4><p><a href="#1">1. 列表处理的前端增删、批量删除以及提交合并数组的处理</a><br><a href="#2">2. 列表的选择性禁用</a><br><a href="#3">3. 跨页选中数据</a><br><a href="#4">4. 无分页列表，支持搜索，记住勾选的数据</a></p>
 <hr>
-<p><a name="1">1.列表处理的前端增删、批量删除以及提交合并数组的处理</a></p>
+<p><a name="1">1. 列表处理的前端增删、批量删除以及提交合并数组的处理</a></p>
 <ul>
 <li><p>需求</p>
 <blockquote>
 <p>有一个需求，需要对一个列表的数据进行操作，只有在提交才调用接口，列表刚进来也调用接口，会有一些数据。并且在提交时如果两个对象姓名和地址一样。则合并这两个对象，让数字项相加。<br><img src="/2019/06/30/rhtext004/001.png" alt="示例"></p>
 </blockquote>
 </li>
-<li><p>1.1思路</p>
+<li><p>1.1 思路</p>
 <blockquote>
 <p>新增和删除比较好实现，新增时，直接push一个空对象到一个新的数组里面，删除则是根据索引splice删除当前项，比较难的就是批量删除，批量删除要根据对象中唯一的字段去匹配，然后从最初的列表里面删除，后端返回的数据有唯一的标识id,但是前端新建的数据没有唯一的标识id,所以新增的时候给新增的每一项加一个时间key,这个key也是唯一的。提交的时候合并对象，则是要将判断的两个数据变成一个新的数据的某一项，然后根据这一项判断。</p>
 </blockquote>
@@ -210,7 +322,7 @@
 <p>有时候列表增加勾选按钮的时候，有时候不满足条件的项，不让勾选，这个时候就要将这些项的勾选禁用掉。如图<br><img src="/2019/06/30/rhtext004/1.png" alt="示例"></p>
 </blockquote>
 </li>
-<li><p>2.1实现方法</p>
+<li><p>2.1 实现方法</p>
 <blockquote>
 <p>element-ui 列表的勾选项type=’selection’中,有一个selectable的属性，返回true就是可以勾选，返回false，则禁止勾选。<br><img src="/2019/06/30/rhtext004/2.png" alt="selectable"><br><a href="https://ronghuaizone.github.io/vue-element_test/test3.html" target="_blank" rel="noopener">完成后的示例</a></p>
 </blockquote>

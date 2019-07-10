@@ -6,25 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue项目关于tree特殊处理 | developer rong huai</title>
+  <title>vue项目关于树级数据的特殊处理 | developer rong huai</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写在前面: 在使用 vue+element-ui 开发的项目，肯定有树级关系的交互，但是有时候在做一些处理时，后端没有提供前端需要的数据，这个时候前端则需要对树级的数据进行特殊的处理。示例1示例2  目录：1. 树级结构的数据，点击向上获取所有父级id2. 树级结构的数据,搜索对应id,返回所对对象    1. 树级结构的数据，点击向上获取所有父级id  需求  在一个列表中，新建的时候要给数据绑">
+  <meta name="description" content="写在前面: 在使用 vue+element-ui 开发的项目，肯定有树级关系的交互，但是有时候在做一些处理时，后端没有提供前端需要的数据字段，这个时候前端则需要对树级的数据进行特殊的处理。示例1示例2  目录：1. 树级结构的数据，点击向上获取所有父级id2. 树级结构的数据,搜索对应id,返回所对对象    1. 树级结构的数据，点击向上获取所有父级id  需求  在一个列表中，新建的时候要给数">
 <meta name="keywords" content="vue+element">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue项目关于tree特殊处理">
+<meta property="og:title" content="vue项目关于树级数据的特殊处理">
 <meta property="og:url" content="http://yoursite.com/2019/07/02/rhtext005/index.html">
 <meta property="og:site_name" content="developer rong huai">
-<meta property="og:description" content="写在前面: 在使用 vue+element-ui 开发的项目，肯定有树级关系的交互，但是有时候在做一些处理时，后端没有提供前端需要的数据，这个时候前端则需要对树级的数据进行特殊的处理。示例1示例2  目录：1. 树级结构的数据，点击向上获取所有父级id2. 树级结构的数据,搜索对应id,返回所对对象    1. 树级结构的数据，点击向上获取所有父级id  需求  在一个列表中，新建的时候要给数据绑">
+<meta property="og:description" content="写在前面: 在使用 vue+element-ui 开发的项目，肯定有树级关系的交互，但是有时候在做一些处理时，后端没有提供前端需要的数据字段，这个时候前端则需要对树级的数据进行特殊的处理。示例1示例2  目录：1. 树级结构的数据，点击向上获取所有父级id2. 树级结构的数据,搜索对应id,返回所对对象    1. 树级结构的数据，点击向上获取所有父级id  需求  在一个列表中，新建的时候要给数">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/07/02/rhtext005/1.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/02/rhtext005/2.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/02/rhtext005/3.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/02/rhtext005/4.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/02/rhtext005/5.png">
-<meta property="og:updated_time" content="2019-07-02T16:44:25.308Z">
+<meta property="og:updated_time" content="2019-07-02T16:47:34.970Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue项目关于tree特殊处理">
-<meta name="twitter:description" content="写在前面: 在使用 vue+element-ui 开发的项目，肯定有树级关系的交互，但是有时候在做一些处理时，后端没有提供前端需要的数据，这个时候前端则需要对树级的数据进行特殊的处理。示例1示例2  目录：1. 树级结构的数据，点击向上获取所有父级id2. 树级结构的数据,搜索对应id,返回所对对象    1. 树级结构的数据，点击向上获取所有父级id  需求  在一个列表中，新建的时候要给数据绑">
+<meta name="twitter:title" content="vue项目关于树级数据的特殊处理">
+<meta name="twitter:description" content="写在前面: 在使用 vue+element-ui 开发的项目，肯定有树级关系的交互，但是有时候在做一些处理时，后端没有提供前端需要的数据字段，这个时候前端则需要对树级的数据进行特殊的处理。示例1示例2  目录：1. 树级结构的数据，点击向上获取所有父级id2. 树级结构的数据,搜索对应id,返回所对对象    1. 树级结构的数据，点击向上获取所有父级id  需求  在一个列表中，新建的时候要给数">
 <meta name="twitter:image" content="http://yoursite.com/2019/07/02/rhtext005/1.png">
   
     <link rel="alternative" href="/atom.xml" title="developer rong huai" type="application/atom+xml">
@@ -164,7 +164,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      vue项目关于tree特殊处理
+      vue项目关于树级数据的特殊处理
     </h1>
   
 
@@ -178,7 +178,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h6 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面:"></a><em>写在前面:</em></h6><blockquote>
-<p>在使用 vue+element-ui 开发的项目，肯定有树级关系的交互，但是有时候在做一些处理时，后端没有提供前端需要的数据，这个时候前端则需要对树级的数据进行特殊的处理。<br><a href="https://ronghuaizone.github.io/vue-element_test/test5.html" target="_blank" rel="noopener">示例1</a><br><a href="https://ronghuaizone.github.io/vue-element_test/test6.html" target="_blank" rel="noopener">示例2</a></p>
+<p>在使用 vue+element-ui 开发的项目，肯定有树级关系的交互，但是有时候在做一些处理时，后端没有提供前端需要的数据字段，这个时候前端则需要对树级的数据进行特殊的处理。<br><a href="https://ronghuaizone.github.io/vue-element_test/test5.html" target="_blank" rel="noopener">示例1</a><br><a href="https://ronghuaizone.github.io/vue-element_test/test6.html" target="_blank" rel="noopener">示例2</a></p>
 </blockquote>
 <h4 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h4><p><a href="#1">1. 树级结构的数据，点击向上获取所有父级id</a><br><a href="#2">2. 树级结构的数据,搜索对应id,返回所对对象</a>  </p>
 <hr>
@@ -186,7 +186,7 @@
 <ul>
 <li><p>需求</p>
 <blockquote>
-<p>在一个列表中，新建的时候要给数据绑定组织或者菜单，编辑的时候可以查看到这个组织和菜单，编辑时可以采用级联选择器，但是编辑时要想回填出数据，则必须向上获得所有的父级id,才可以回填出组织或者菜单。如果后台返回的数据没有一级一级存父级id，或者没有用一个数组ids存所有父级id，这个时候就需要前端在获取数据的时候进行处理。现用点击树结构的项，获取当前id及所有父id,来模拟回填的场景。<br><img src="/2019/07/02/rhtext005/1.png" alt="示例"></p>
+<p>在一个列表中，新建的时候要给数据绑定组织或者菜单，编辑的时候可以查看到这个组织和菜单，编辑时可以采用级联选择器，但是编辑时要想回填出数据，则必须向上获得所有的父级id,才可以回填出组织或者菜单。如果后台返回的数据没有一级一级存父级id，或者没有用一个数组ids存所有父级id，这个时候就需要前端在获取数据的时候进行处理。现用点击树结构的某一项，获取当前id及所有父id,来模拟回填的场景。<br><img src="/2019/07/02/rhtext005/1.png" alt="示例"></p>
 </blockquote>
 </li>
 <li><p>1.1 方法一：获取数据后一层一层将父级id存着，然后在点击的时候获取当前id及所有父级id。</p>
@@ -273,6 +273,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/07/08/rhtext006/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          rhtext006
+        
+      </div>
+    </a>
   
   
     <a href="/2019/06/30/rhtext004/" id="article-nav-older" class="article-nav-link-wrap">

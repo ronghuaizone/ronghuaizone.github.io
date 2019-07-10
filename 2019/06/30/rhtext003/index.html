@@ -6,15 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue项目一些特殊交互的实现及优化一 | developer rong huai</title>
+  <title>vue项目一些特殊交互的样式处理 | developer rong huai</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写在前面: 在使用 vue+element-ui 开发项目，有时候会遇到一些特殊一点的交互及优化项，element 组件无法直接满足我们的需求，但是特殊处理之后也可以满足需要。现在列出一些项目中遇到的场景，以及如何实现。示例链接  目录：1. 轮播+块状高亮2. 切换–删除表单校验  1.轮播+块状高亮  需求 pc系统的项目，有一个块状的信息展示区，点击高亮，同时支持切换，如图所示。   1.1">
+  <meta name="description" content="写在前面: 在使用 vue+element-ui 开发项目，有时候会遇到一些特殊一点的样式布局，现列出部分特殊交互的样式处理示例示例链接  目录：1. 轮播+块状高亮2. 切换–删除表单校验  1.轮播+块状高亮  需求 pc系统的项目，有一个块状的信息展示区，点击高亮，同时支持切换，如图所示。   1.1 思路 要实现这个，可以用element-ui的Carousel走马灯，但是Carousel">
 <meta name="keywords" content="vue+element">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue项目一些特殊交互的实现及优化一">
+<meta property="og:title" content="vue项目一些特殊交互的样式处理">
 <meta property="og:url" content="http://yoursite.com/2019/06/30/rhtext003/index.html">
 <meta property="og:site_name" content="developer rong huai">
-<meta property="og:description" content="写在前面: 在使用 vue+element-ui 开发项目，有时候会遇到一些特殊一点的交互及优化项，element 组件无法直接满足我们的需求，但是特殊处理之后也可以满足需要。现在列出一些项目中遇到的场景，以及如何实现。示例链接  目录：1. 轮播+块状高亮2. 切换–删除表单校验  1.轮播+块状高亮  需求 pc系统的项目，有一个块状的信息展示区，点击高亮，同时支持切换，如图所示。   1.1">
+<meta property="og:description" content="写在前面: 在使用 vue+element-ui 开发项目，有时候会遇到一些特殊一点的样式布局，现列出部分特殊交互的样式处理示例示例链接  目录：1. 轮播+块状高亮2. 切换–删除表单校验  1.轮播+块状高亮  需求 pc系统的项目，有一个块状的信息展示区，点击高亮，同时支持切换，如图所示。   1.1 思路 要实现这个，可以用element-ui的Carousel走马灯，但是Carousel">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext003/1.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext003/2.png">
@@ -22,10 +22,10 @@
 <meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext003/4.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext003/5.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext003/6.png">
-<meta property="og:updated_time" content="2019-06-30T15:10:34.353Z">
+<meta property="og:updated_time" content="2019-07-08T15:35:00.893Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue项目一些特殊交互的实现及优化一">
-<meta name="twitter:description" content="写在前面: 在使用 vue+element-ui 开发项目，有时候会遇到一些特殊一点的交互及优化项，element 组件无法直接满足我们的需求，但是特殊处理之后也可以满足需要。现在列出一些项目中遇到的场景，以及如何实现。示例链接  目录：1. 轮播+块状高亮2. 切换–删除表单校验  1.轮播+块状高亮  需求 pc系统的项目，有一个块状的信息展示区，点击高亮，同时支持切换，如图所示。   1.1">
+<meta name="twitter:title" content="vue项目一些特殊交互的样式处理">
+<meta name="twitter:description" content="写在前面: 在使用 vue+element-ui 开发项目，有时候会遇到一些特殊一点的样式布局，现列出部分特殊交互的样式处理示例示例链接  目录：1. 轮播+块状高亮2. 切换–删除表单校验  1.轮播+块状高亮  需求 pc系统的项目，有一个块状的信息展示区，点击高亮，同时支持切换，如图所示。   1.1 思路 要实现这个，可以用element-ui的Carousel走马灯，但是Carousel">
 <meta name="twitter:image" content="http://yoursite.com/2019/06/30/rhtext003/1.png">
   
     <link rel="alternative" href="/atom.xml" title="developer rong huai" type="application/atom+xml">
@@ -165,7 +165,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      vue项目一些特殊交互的实现及优化一
+      vue项目一些特殊交互的样式处理
     </h1>
   
 
@@ -179,7 +179,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h6 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面:"></a><em>写在前面:</em></h6><blockquote>
-<p>在使用 vue+element-ui 开发项目，有时候会遇到一些特殊一点的交互及优化项，element 组件无法直接满足我们的需求，但是特殊处理之后也可以满足需要。现在列出一些项目中遇到的场景，以及如何实现。<a href="https://ronghuaizone.github.io/vue-element_test/test1.html" target="_blank" rel="noopener">示例链接</a></p>
+<p>在使用 vue+element-ui 开发项目，有时候会遇到一些特殊一点的样式布局，现列出部分特殊交互的样式处理示例<br><a href="https://ronghuaizone.github.io/vue-element_test/test1.html" target="_blank" rel="noopener">示例链接</a></p>
 </blockquote>
 <h4 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h4><p><a href="#1">1. 轮播+块状高亮</a><br><a href="#2">2. 切换–删除表单校验</a></p>
 <hr>

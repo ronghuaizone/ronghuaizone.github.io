@@ -6,26 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue项目一些特殊交互的样式处理 | developer rong huai</title>
+  <title>vue项目一些特殊layout的样式处理 | developer rong huai</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写在前面: 在使用 vue+element-ui 开发项目，有时候会遇到一些特殊一点的样式布局，现列出部分特殊交互的样式处理示例示例链接  目录：1. 轮播+块状高亮2. 切换–删除表单校验  1.轮播+块状高亮  需求 pc系统的项目，有一个块状的信息展示区，点击高亮，同时支持切换，如图所示。   1.1 思路 要实现这个，可以用element-ui的Carousel走马灯，但是Carousel">
+  <meta name="description" content="写在前面: 在使用 vue+element-ui 开发项目，有时候会遇到一些特殊一点的样式布局，现列出部分特殊交互的样式处理示例示例1示例2  目录：1. 轮播+块状高亮2. 布局：上面盒子固定高度，下面盒子占剩余高度  1. 轮播+块状高亮  需求 pc系统的项目，有一个块状的信息展示区，点击高亮，同时支持切换，如图所示。   1.1 思路 要实现这个，可以用element-ui的Carouse">
 <meta name="keywords" content="vue+element">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue项目一些特殊交互的样式处理">
+<meta property="og:title" content="vue项目一些特殊layout的样式处理">
 <meta property="og:url" content="http://yoursite.com/2019/06/30/rhtext003/index.html">
 <meta property="og:site_name" content="developer rong huai">
-<meta property="og:description" content="写在前面: 在使用 vue+element-ui 开发项目，有时候会遇到一些特殊一点的样式布局，现列出部分特殊交互的样式处理示例示例链接  目录：1. 轮播+块状高亮2. 切换–删除表单校验  1.轮播+块状高亮  需求 pc系统的项目，有一个块状的信息展示区，点击高亮，同时支持切换，如图所示。   1.1 思路 要实现这个，可以用element-ui的Carousel走马灯，但是Carousel">
+<meta property="og:description" content="写在前面: 在使用 vue+element-ui 开发项目，有时候会遇到一些特殊一点的样式布局，现列出部分特殊交互的样式处理示例示例1示例2  目录：1. 轮播+块状高亮2. 布局：上面盒子固定高度，下面盒子占剩余高度  1. 轮播+块状高亮  需求 pc系统的项目，有一个块状的信息展示区，点击高亮，同时支持切换，如图所示。   1.1 思路 要实现这个，可以用element-ui的Carouse">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext003/1.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext003/2.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext003/3.png">
-<meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext003/4.png">
-<meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext003/5.png">
-<meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext003/6.png">
-<meta property="og:updated_time" content="2019-07-08T15:35:00.893Z">
+<meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext003/10.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext003/11.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/30/rhtext003/12.png">
+<meta property="og:updated_time" content="2019-07-10T15:40:14.358Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue项目一些特殊交互的样式处理">
-<meta name="twitter:description" content="写在前面: 在使用 vue+element-ui 开发项目，有时候会遇到一些特殊一点的样式布局，现列出部分特殊交互的样式处理示例示例链接  目录：1. 轮播+块状高亮2. 切换–删除表单校验  1.轮播+块状高亮  需求 pc系统的项目，有一个块状的信息展示区，点击高亮，同时支持切换，如图所示。   1.1 思路 要实现这个，可以用element-ui的Carousel走马灯，但是Carousel">
+<meta name="twitter:title" content="vue项目一些特殊layout的样式处理">
+<meta name="twitter:description" content="写在前面: 在使用 vue+element-ui 开发项目，有时候会遇到一些特殊一点的样式布局，现列出部分特殊交互的样式处理示例示例1示例2  目录：1. 轮播+块状高亮2. 布局：上面盒子固定高度，下面盒子占剩余高度  1. 轮播+块状高亮  需求 pc系统的项目，有一个块状的信息展示区，点击高亮，同时支持切换，如图所示。   1.1 思路 要实现这个，可以用element-ui的Carouse">
 <meta name="twitter:image" content="http://yoursite.com/2019/06/30/rhtext003/1.png">
   
     <link rel="alternative" href="/atom.xml" title="developer rong huai" type="application/atom+xml">
@@ -165,7 +165,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      vue项目一些特殊交互的样式处理
+      vue项目一些特殊layout的样式处理
     </h1>
   
 
@@ -179,11 +179,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h6 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面:"></a><em>写在前面:</em></h6><blockquote>
-<p>在使用 vue+element-ui 开发项目，有时候会遇到一些特殊一点的样式布局，现列出部分特殊交互的样式处理示例<br><a href="https://ronghuaizone.github.io/vue-element_test/test1.html" target="_blank" rel="noopener">示例链接</a></p>
+<p>在使用 vue+element-ui 开发项目，有时候会遇到一些特殊一点的样式布局，现列出部分特殊交互的样式处理示例<br><a href="https://ronghuaizone.github.io/vue-element_test/test1.html" target="_blank" rel="noopener">示例1</a><br><a href="https://ronghuaizone.github.io/vue-element_test/layout.html" target="_blank" rel="noopener">示例2</a></p>
 </blockquote>
-<h4 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h4><p><a href="#1">1. 轮播+块状高亮</a><br><a href="#2">2. 切换–删除表单校验</a></p>
+<h4 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h4><p><a href="#1">1. 轮播+块状高亮</a><br><a href="#2">2. 布局：上面盒子固定高度，下面盒子占剩余高度</a></p>
 <hr>
-<p><a name="1">1.轮播+块状高亮</a></p>
+<p><a name="1">1. 轮播+块状高亮</a></p>
 <ul>
 <li>需求<blockquote>
 <p>pc系统的项目，有一个块状的信息展示区，点击高亮，同时支持切换，如图所示。<br><img src="/2019/06/30/rhtext003/1.png" alt="示例"></p>
@@ -211,30 +211,30 @@
 </ul>
 <p><a href="https://ronghuaizone.github.io/vue-element_test/test1.html" target="_blank" rel="noopener">完成后的示例</a></p>
 <hr>
-<p><a name="2">2.切换–删除表单校验</a></p>
+<p><a name="2">2. 布局：上面盒子固定高度，下面盒子占剩余高度</a></p>
 <ul>
 <li><p>需求</p>
 <blockquote>
-<p>在创建一个信息时，推送对象和组织互斥。只能选一个，对象是列表，组织是树级。如图所示。<br><img src="/2019/06/30/rhtext003/4.png" alt="表单校验"></p>
+<p>有一个新闻的页面，上下布局，上面一个盒子放logo，下面一个盒子居中放新闻。上下盒子的父盒子有背景色，要求上面盒子固定高度，下面一个盒子占满剩余高度。<br><img src="/2019/06/30/rhtext003/10.png" alt="布局"></p>
 </blockquote>
 </li>
 <li><p>2.1 思路</p>
 <blockquote>
-<p>element-ui中form有提供好的校验，但是在切换的时候之前互斥的校验不会消失。所以需要特殊处理一下，而树的校验则需要在点击的时候做处理。</p>
+<p>给父容器设置100vh的高度，即可占满屏幕，然后利用flex布局，上面固定，下面盒子给flex:1</p>
 </blockquote>
 </li>
-<li><p>2.2 第一步：切换时删除互斥的校验</p>
+<li><p>2.2 html内容</p>
 <blockquote>
-<p><img src="/2019/06/30/rhtext003/5.png" alt="切换删除校验"></p>
+<p><img src="/2019/06/30/rhtext003/11.png" alt="html内容"></p>
 </blockquote>
 </li>
-<li><p>2.3 第二步：树的节点点击事件check-change中判断，如果有选中项，就清除掉树的校验。</p>
+<li><p>2.3 style内容</p>
 <blockquote>
-<p><img src="/2019/06/30/rhtext003/6.png" alt="切换删除校验"></p>
+<p><img src="/2019/06/30/rhtext003/12.png" alt="style内容"></p>
 </blockquote>
 </li>
 </ul>
-<p><a href="https://ronghuaizone.github.io/vue-element_test/test1.html" target="_blank" rel="noopener">完成后的示例</a></p>
+<p><a href="https://ronghuaizone.github.io/vue-element_test/layout.html" target="_blank" rel="noopener">完成后的示例</a></p>
 
       
 
@@ -297,7 +297,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          vue项目关于列表的特殊交互及使用
+          vue项目关于list的特殊交互及使用
         
       </div>
     </a>
@@ -422,11 +422,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">vue+element</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue+element</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>

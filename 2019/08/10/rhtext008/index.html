@@ -6,26 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>项目中应用element特殊的validate表单校验 | developer rong huai</title>
+  <title>vue + antd-vue项目复杂的树和列表的交互 | developer rong huai</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写在前面: 在使用 vue+element-ui开发项目，数据新增或修改时，会对数据做校验，但是有时候会遇到一些特殊的情况，需要特殊处理，现列出一些例子示例1示例2  目录：1. 切换–删除表单校验2. 列表中多个对象的表单校验  1. 切换–删除表单校验  需求  在创建一个信息时，推送对象和组织互斥。只能选一个，对象是列表，组织是树级。如图所示。   1.1 思路  element-ui中fo">
-<meta name="keywords" content="vue,element">
+  <meta name="description" content="写在前面: 在使用 vue + antd-vue开发数据人工核实类的项目中，遇到一个比较有意思的交互，就是两颗不一样的树，分别勾选的数据点击确认后，要补全到列表对应的属性上。  目录：1. 勾选业务户室树和标准户室树，分别补全列表的业务地址和标准地址  1. 勾选业务户室树和标准户室树，分别补全列表的业务地址和标准地址  需求 在一个用vue-splitpane分屏的界面上。左边分四块，分别对应四">
+<meta name="keywords" content="vue,Ant-Design-Vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="项目中应用element特殊的validate表单校验">
-<meta property="og:url" content="http://yoursite.com/2019/07/08/rhtext006/index.html">
+<meta property="og:title" content="vue + antd-vue项目复杂的树和列表的交互">
+<meta property="og:url" content="http://yoursite.com/2019/08/10/rhtext008/index.html">
 <meta property="og:site_name" content="developer rong huai">
-<meta property="og:description" content="写在前面: 在使用 vue+element-ui开发项目，数据新增或修改时，会对数据做校验，但是有时候会遇到一些特殊的情况，需要特殊处理，现列出一些例子示例1示例2  目录：1. 切换–删除表单校验2. 列表中多个对象的表单校验  1. 切换–删除表单校验  需求  在创建一个信息时，推送对象和组织互斥。只能选一个，对象是列表，组织是树级。如图所示。   1.1 思路  element-ui中fo">
+<meta property="og:description" content="写在前面: 在使用 vue + antd-vue开发数据人工核实类的项目中，遇到一个比较有意思的交互，就是两颗不一样的树，分别勾选的数据点击确认后，要补全到列表对应的属性上。  目录：1. 勾选业务户室树和标准户室树，分别补全列表的业务地址和标准地址  1. 勾选业务户室树和标准户室树，分别补全列表的业务地址和标准地址  需求 在一个用vue-splitpane分屏的界面上。左边分四块，分别对应四">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/07/08/rhtext006/4.png">
-<meta property="og:image" content="http://yoursite.com/2019/07/08/rhtext006/5.png">
-<meta property="og:image" content="http://yoursite.com/2019/07/08/rhtext006/6.png">
-<meta property="og:image" content="http://yoursite.com/2019/07/08/rhtext006/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/07/08/rhtext006/2.png">
-<meta property="og:updated_time" content="2019-07-28T02:57:21.392Z">
+<meta property="og:image" content="http://yoursite.com/2019/08/10/rhtext008/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/10/rhtext008/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/10/rhtext008/3.png">
+<meta property="og:updated_time" content="2020-08-16T14:16:43.552Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="项目中应用element特殊的validate表单校验">
-<meta name="twitter:description" content="写在前面: 在使用 vue+element-ui开发项目，数据新增或修改时，会对数据做校验，但是有时候会遇到一些特殊的情况，需要特殊处理，现列出一些例子示例1示例2  目录：1. 切换–删除表单校验2. 列表中多个对象的表单校验  1. 切换–删除表单校验  需求  在创建一个信息时，推送对象和组织互斥。只能选一个，对象是列表，组织是树级。如图所示。   1.1 思路  element-ui中fo">
-<meta name="twitter:image" content="http://yoursite.com/2019/07/08/rhtext006/4.png">
+<meta name="twitter:title" content="vue + antd-vue项目复杂的树和列表的交互">
+<meta name="twitter:description" content="写在前面: 在使用 vue + antd-vue开发数据人工核实类的项目中，遇到一个比较有意思的交互，就是两颗不一样的树，分别勾选的数据点击确认后，要补全到列表对应的属性上。  目录：1. 勾选业务户室树和标准户室树，分别补全列表的业务地址和标准地址  1. 勾选业务户室树和标准户室树，分别补全列表的业务地址和标准地址  需求 在一个用vue-splitpane分屏的界面上。左边分四块，分别对应四">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/10/rhtext008/1.png">
   
     <link rel="alternative" href="/atom.xml" title="developer rong huai" type="application/atom+xml">
   
@@ -157,20 +155,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-rhtext006" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-rhtext008" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      项目中应用element特殊的validate表单校验
+      vue + antd-vue项目复杂的树和列表的交互
     </h1>
   
 
         
-        <a href="/2019/07/08/rhtext006/" class="archive-article-date">
-  	<time datetime="2019-07-08T15:20:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-08</time>
+        <a href="/2019/08/10/rhtext008/" class="archive-article-date">
+  	<time datetime="2019-08-10T08:08:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-10</time>
 </a>
         
       </header>
@@ -178,52 +176,35 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h6 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面:"></a><em>写在前面:</em></h6><blockquote>
-<p>在使用 vue+element-ui开发项目，数据新增或修改时，会对数据做校验，但是有时候会遇到一些特殊的情况，需要特殊处理，现列出一些例子<br><a href="https://ronghuaizone.github.io/vue-element_test/test7.html" target="_blank" rel="noopener">示例1</a><br><a href="https://ronghuaizone.github.io/vue-element_test/examine.html" target="_blank" rel="noopener">示例2</a></p>
+<p>在使用 vue + antd-vue开发数据人工核实类的项目中，遇到一个比较有意思的交互，就是两颗不一样的树，分别勾选的数据点击确认后，要补全到列表对应的属性上。</p>
 </blockquote>
-<h4 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h4><p><a href="#1">1. 切换–删除表单校验</a><br><a href="#2">2. 列表中多个对象的表单校验</a></p>
+<h4 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h4><p><a href="#1">1. 勾选业务户室树和标准户室树，分别补全列表的业务地址和标准地址</a></p>
 <hr>
-<p><a name="1">1. 切换–删除表单校验</a></p>
+<p><a name="1">1. 勾选业务户室树和标准户室树，分别补全列表的业务地址和标准地址</a></p>
 <ul>
-<li><p>需求</p>
-<blockquote>
-<p>在创建一个信息时，推送对象和组织互斥。只能选一个，对象是列表，组织是树级。如图所示。<br><img src="/2019/07/08/rhtext006/4.png" alt="表单校验"></p>
+<li>需求<blockquote>
+<p>在一个用vue-splitpane分屏的界面上。左边分四块，分别对应四棵树。右边是一个列表。具体交互是勾选业务数据，查出对应的标准数据，查出对应的业务户室以及对应标准数据的对应标准户室（左边下半部分）。勾选业务户室点击+号，记录到右侧列表的业务地址上，勾选标准户室点击+号记录到右侧列表的标准地址上。例如勾选1条业务户室点击+号，则列表出现一条有业务地址的数据同时这条数据的标准地址是空的。</p>
 </blockquote>
 </li>
+</ul>
+<p><img src="/2019/08/10/rhtext008/1.png" alt="示例"></p>
+<p>再勾选两条标准户室点击点击+号，则列表变成两条数据，第一条数据既有业务也有标准地址（勾选的第一条数据），第二条只有标准没有业务。</p>
+<p><img src="/2019/08/10/rhtext008/2.png" alt="示例"></p>
+<p>再勾选两条业务户室点击+号则列表变成三条数据，两条既有业务地址又有标准地址。还有一条只有业务地址，没有标准地址。</p>
+<p><img src="/2019/08/10/rhtext008/3.png" alt="示例"></p>
+<ul>
 <li><p>1.1 思路</p>
 <blockquote>
-<p>element-ui中form有提供好的校验，但是在切换的时候之前互斥的校验不会消失。所以需要特殊处理一下，而树的校验则需要在点击的时候做处理。</p>
+<p>咋一看列表不是两边都选好后合并对象的属性处理好数据再加载到树上，而是对象的属性要分两步去补充，这个很难控制。但是仔细一想就会有个规律，业务户室的数据只会补充业务地址，标准户室的数据只会补充到标准地址，如果把这两个属性看成两个坑，一个业务地址坑，一个标准地址坑，两条树看做人，两棵树上的人只能去对应的坑。每次加的时候，先看已有的数据有没有对应的坑，如果有，先补全坑 如果坑位不足，多几条就再拉几个对象去挖坑。以此类推。</p>
 </blockquote>
 </li>
-<li><p>1.2 第一步：切换时删除互斥的校验</p>
-<blockquote>
-<p><img src="/2019/07/08/rhtext006/5.png" alt="切换删除校验"></p>
-</blockquote>
-</li>
-<li><p>1.3 第二步：树的节点点击事件check-change中判断，如果有选中项，就清除掉树的校验。</p>
-<blockquote>
-<p><img src="/2019/07/08/rhtext006/6.png" alt="切换删除校验"></p>
-</blockquote>
+<li><p>1.2 第一步：所以第一步得计算现在两种坑有多少空位</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">completionSit(arr = []) &#123; // 补全缺位信息</span><br><span class="line">    const a = this.dataSource.filter(v =&gt; !(&apos;stdId&apos; in v)).length + arr.filter(v =&gt; !(&apos;stdId&apos; in v)).length // 业务</span><br><span class="line">    const b = this.dataSource.filter(v =&gt; !(&apos;relStdId&apos; in v)).length + arr.filter(v =&gt; !(&apos;relStdId&apos; in v)).length // 标准</span><br><span class="line">    console.log(this.dataSource)</span><br><span class="line">    this.sitObj = &#123; a, b &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><a href="https://ronghuaizone.github.io/vue-element_test/test7.html" target="_blank" rel="noopener">完成后的示例</a></p>
-<hr>
-<p><a name="2">2. 列表中多个对象的表单校验</a></p>
-<ul>
-<li><p>需求</p>
-<blockquote>
-<p>在创建时，支持多条添加，对每一条都进行校验。<br><img src="/2019/07/08/rhtext006/1.png" alt="示例"></p>
-</blockquote>
-</li>
-<li><p>2.1 思路</p>
-<blockquote>
-<p>要想利用vue的el-form组件，必须要将所有填的元素放到一个对象里面，多条数据，存到对象中的list里面，然后根据索引对每一条数据做校验。</p>
-</blockquote>
-</li>
-<li><p>2.2 处理循环，根据索引校验<br><img src="/2019/07/08/rhtext006/2.png" alt="示例"></p>
-</li>
-<li><p>2.3 剩下就是给没一项设置prop,在提交时检验validate…请参考以下示例<br><a href="https://ronghuaizone.github.io/vue-element_test/examine.html" target="_blank" rel="noopener">完成后的示例</a></p>
-</li>
-</ul>
+<p>1.3 第二步：得判断你带的人有多少，坑位有多少，若没坑位则再创建对象接上，并且把对应的坑占上，人如果少了则直接补全空位的坑位，人若少了，坑位不足。则前面的人补全前面的空位的坑位，剩下的再创建对象接上，并且把对应的坑占上。所以也写一个方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">completionList(obj, target, arr, dataSource) &#123; // 补全列表信息</span><br><span class="line">    const leng = dataSource.length</span><br><span class="line">    const leng1 = arr.length</span><br><span class="line">    if (leng1 - obj[target] &gt; 0) &#123;</span><br><span class="line">        const indexs = []</span><br><span class="line">        const str = target === &apos;b&apos; ? &apos;relStdId&apos; : &apos;stdId&apos;</span><br><span class="line">        dataSource.map((item, index) =&gt; &#123;</span><br><span class="line">            if (!(str in item)) &#123;</span><br><span class="line">                indexs.push(index)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        for (let index = 0; index &lt; obj[target]; index++) &#123;</span><br><span class="line">            const element = arr[index]</span><br><span class="line">            dataSource[indexs[index]] = &#123; ...dataSource[indexs[index]], ...element &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for (let index = 0; index &lt; leng1 - obj[target]; index++) &#123;</span><br><span class="line">            const element = arr[obj[target] + index]</span><br><span class="line">            dataSource.push(&#123; ...element &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        for (let index = 0; index &lt; leng1; index++) &#123;</span><br><span class="line">            const element = arr[index]</span><br><span class="line">            dataSource[ leng - obj[target] + index ] = &#123; ...dataSource[ leng - obj[target] + index ], ...element &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return dataSource</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<p>1.4业务户室和标准户室点击新增的时候。先计算坑位，再去补全列表信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">    businessRoomList(val) &#123;</span><br><span class="line">        if (this.sitObj.a) &#123;</span><br><span class="line">            this.dataSource = this.setTableKey(this.completionList(this.sitObj, &apos;a&apos;, val, this.dataSource))</span><br><span class="line">            this.completionSit()</span><br><span class="line">        &#125; else if (this.sitObj.b) &#123;</span><br><span class="line">            this.dataSource = this.setTableKey(this.dataSource.concat(val))</span><br><span class="line">            this.completionSit()</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            this.dataSource = this.setTableKey(this.dataSource.concat(val))</span><br><span class="line">            this.completionSit()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    standardRoomList(val) &#123;</span><br><span class="line">        console.log(&apos;标准户室&apos;)</span><br><span class="line">        if (this.sitObj.a) &#123;</span><br><span class="line">            this.dataSource = this.setTableKey(this.dataSource.concat(val))</span><br><span class="line">            this.completionSit()</span><br><span class="line">        &#125; else if (this.sitObj.b) &#123;</span><br><span class="line">            this.dataSource = this.setTableKey(this.completionList(this.sitObj, &apos;b&apos;, val, this.dataSource))</span><br><span class="line">            this.completionSit()</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            this.dataSource = this.setTableKey(this.dataSource.concat(val))</span><br><span class="line">            this.completionSit()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<p>1.5这样交互就完成了，当然具体的业务更复杂些。这里把有意思的一点拎出来讲讲。</p>
 
       
 
@@ -267,7 +248,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">element</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ant-Design-Vue</a>
         		</li>
       		
 		</ul>
@@ -286,18 +267,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/10/rhtext007/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          项目中的导入和导出
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/02/rhtext005/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">项目中应用element关于tree的特殊处理</div>
+    <a href="/2019/07/10/rhtext007/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">项目中的导入和导出</div>
       <i class="icon-circle-right"></i>
     </a>
   

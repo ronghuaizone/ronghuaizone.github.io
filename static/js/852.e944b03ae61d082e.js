@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkvue3_low_code=self.webpackChunkvue3_low_code||[]).push([[852],{70852:function(e,u,t){t.r(u),t.d(u,{default:function(){return s}});var n=t(56768),a=t(24232),c={__name:"BgBox",setup(e){return(0,n.sV)((()=>{})),(e,u)=>((0,n.uX)(),(0,n.CE)("div",(0,a._B)((0,n.Ng)(e.$attrs)),null,16))}},s=(0,t(71241).A)(c,[["__scopeId","data-v-2b8a1fc5"]])}}]);
